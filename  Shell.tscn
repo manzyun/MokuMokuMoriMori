@@ -1,12 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res:// Shell.gd" type="Script" id=1]
 [ext_resource path="res://graphic/tree.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-
-[sub_resource type="CircleShape2D" id=2]
-radius = 19.3496
 
 [node name="Shell" type="Area2D"]
 script = ExtResource( 1 )
@@ -20,7 +17,8 @@ texture = ExtResource( 2 )
 [node name="Telitory" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[node name="BornCircle" type="CollisionShape2D" parent="."]
-shape = SubResource( 2 )
-one_way_collision_margin = 0.0
-[connection signal="collision_telitory" from="." to="." method="_on_Shell_collision_telitory"]
+[node name="TimerBorn" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+[connection signal="body_entered" from="." to="." method="_on_Shell_body_entered"]
+[connection signal="timeout" from="TimerBorn" to="." method="_on_TimerBorn_timeout"]

@@ -5,9 +5,7 @@
 
 [node name="Main" type="Node"]
 script = ExtResource( 2 )
+Shell = ExtResource( 1 )
 
 [node name="Shell" parent="." instance=ExtResource( 1 )]
-
-[node name="StartTimer" type="Timer" parent="."]
-
-[node name="JudgeTimer" type="Timer" parent="."]
+[connection signal="born" from="Shell" to="." method="_on_Shell_born"]
