@@ -1,9 +1,12 @@
 extends Node
 
 export (PackedScene) var Shell
+export (PackedScene) var HUD
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+    var hud = HUD.instance()
+    add_child(hud)
     randomize()
 
 func _input(event):
