@@ -6,6 +6,11 @@ export (PackedScene) var Shell
 func _ready():
     randomize()
 
-func _on_Shell_born():
+func _input(event):
+    if event is InputEventMouseButton:
+        _on_Shell_born(event.position)
+
+func _on_Shell_born(pos: Vector2):
     var shell = Shell.instance()
+    shell.position = pos
     add_child(shell)
