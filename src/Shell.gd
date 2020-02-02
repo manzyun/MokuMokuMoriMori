@@ -1,5 +1,7 @@
 extends Area2D
 
+signal born
+
 export var per_move = 20 # 1フレームにつき移動する量
 
 var screen_size: Vector2
@@ -18,3 +20,6 @@ func _process(delta):
 func __BornPosition(n0: Area2D, n1: Area2D) -> Vector2:
     return Vector2((position.x + n0.position.x + n1.position.x) / 3,
                     (position.y + n0.position.y + n1.position.y) / 3)
+
+func _on_Shell_body_entered(body: Area2D):
+    pass
