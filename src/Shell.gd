@@ -2,6 +2,8 @@ extends Area2D
 
 export var per_move = 20 # 1フレームにつき移動する量
 
+var screen_size: Vector2
+
 func _ready():
     screen_size = get_viewport_rect().size
     position += Vector2(rand_range(-10, 10), rand_range(-10, 10))
