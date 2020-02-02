@@ -16,10 +16,4 @@ func _process(delta):
                         ) * per_move) * delta
     position = Vector2(clamp(position.x, 0, screen_size.x),
                 clamp(position.y, 0, screen_size.y))
-
-func __BornPosition(n0: Area2D, n1: Area2D) -> Vector2:
-    return Vector2((position.x + n0.position.x + n1.position.x) / 3,
-                    (position.y + n0.position.y + n1.position.y) / 3)
-
-func _on_Shell_body_entered(body: Area2D):
-    pass
+    rotation_degrees += rand_range(-0.2, 0.2)
