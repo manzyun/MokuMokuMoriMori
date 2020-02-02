@@ -1,7 +1,5 @@
 extends Area2D
 
-signal born
-
 export var per_move = 20 # 1フレームにつき移動する量
 
 var screen_size: Vector2

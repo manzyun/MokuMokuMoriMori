@@ -8,6 +8,7 @@
 
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
+<<<<<<< Updated upstream
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 
@@ -21,3 +22,11 @@ texture = ExtResource( 5 )
 [node name="HUD" parent="." instance=ExtResource( 2 )]
 [connection signal="gamestart" from="HUD" to="." method="_on_HUD_gamestart"]
 [connection signal="gamestart" from="HUD" to="Stage" method="_on_HUD_gamestart"]
+=======
+Shell = ExtResource( 3 )
+
+[node name="HUD" parent="." instance=ExtResource( 2 )]
+
+[node name="Shell" parent="." instance=ExtResource( 3 )]
+position = Vector2( 225.067, 323.126 )
+>>>>>>> Stashed changes
